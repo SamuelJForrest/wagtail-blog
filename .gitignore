@@ -1,0 +1,9 @@
+# Core
+.venv
+__pycache__
+static/CACHE
+*.sqlite3
+
+# Prettier
+.prettierignore
+.prettierrc

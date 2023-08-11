@@ -1,0 +1,51 @@
+.footer {
+	background: $color-blue-dark;
+	padding: 3.2rem 0 4rem;
+
+	@media screen and (min-width: $lg) {
+		padding: 4.2rem 0 6rem;
+	}
+
+	&-title {
+		@extend .h3;
+		color: $color-white;
+
+		&.__sub {
+			@extend .h5;
+			margin-bottom: 1.6rem;
+		}
+	}
+
+	&-menu {
+		&-item {
+			& + .footer-menu-item {
+				margin-top: 1rem;
+			}
+
+			a {
+				position: relative;
+				color: $color-white;
+				text-decoration: none;
+
+				&::before {
+					content: "";
+					position: absolute;
+					bottom: -2px;
+					left: 0;
+					right: 0;
+					width: 0;
+					height: 1px;
+					background: $color-white;
+					transition: all 0.3s;
+				}
+
+				&:hover,
+				&:focus {
+					&::before {
+						width: 100%;
+					}
+				}
+			}
+		}
+	}
+}

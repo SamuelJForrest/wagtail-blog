@@ -1,0 +1,53 @@
+.banner {
+	position: relative;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	padding: 3.2rem 0;
+	min-height: 350px;
+
+	@media screen and (min-width: $lg) {
+		min-height: 450px;
+	}
+
+	&-image {
+		@include absolute();
+
+		&::before {
+			@include overlay($color-black, 0.9);
+		}
+
+		img {
+			@include objectFit("cover");
+		}
+	}
+
+	&-content {
+		position: relative;
+		z-index: 2;
+	}
+
+	&-title,
+	&-text {
+		color: $color-white;
+	}
+
+	&-title {
+		font-size: 4.2rem;
+		margin-bottom: 1rem;
+		font-weight: $font-medium;
+
+		@media screen and (min-width: $lg) {
+			font-size: 6rem;
+			margin-bottom: 2.4rem;
+		}
+	}
+
+	&-buttons {
+		margin-top: 2.4rem;
+		display: flex;
+		justify-content: flex-start;
+		align-items: center;
+		gap: 3.2rem;
+	}
+}

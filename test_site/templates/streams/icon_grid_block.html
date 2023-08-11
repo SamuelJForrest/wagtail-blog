@@ -1,0 +1,33 @@
+<div class="icongrid">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                {% if self.title or self.intro_text %}
+                    <div class="icongrid-titlewrap">
+                        {% if self.title %}
+                            <h2 class="icongrid-title">{{ self.title }}</h2>
+                        {% endif %}
+
+                        {% if self.intro_text %}
+                            <p class="icongrid-intro">{{ self.intro_text }}</p>
+                        {% endif %}
+                    </div>
+                {% endif %}
+            </div><!-- col -->
+
+            {% if self.items %}
+                {% for item in self.items %}
+                    <div class="col-lg-4">
+                        <div class="icongrid-item">
+                            <div class="icongrid-item-icon">
+                                {{ item.icon }}
+                            </div>
+                            <h3 class="icongrid-title __item">{{ item.title }}</h3>
+                            <p class="icongrid-text">{{ item.text }}</p>
+                        </div>
+                    </div><!-- col -->
+                {% endfor %}
+            {% endif %}
+        </div><!-- row -->
+    </div><!-- container -->
+</div>

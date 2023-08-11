@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% load static %}
+{% load wagtailcore_tags wagtailimages_tags %}
+
+{% block body_class %}template-homepage{% endblock %}
+
+{% block extra_css %}
+
+{% endblock extra_css %}
+
+{% block content %}
+
+{% include 'components/banner.html' with 
+    banner_image=self.banner_image 
+    banner_title=self.banner_title 
+    banner_text=self.banner_text 
+    banner_cta=self.banner_cta 
+    banner_link=self.banner_link 
+    banner_link_text=self.banner_link_text 
+%}
+
+{% if self.intro_text %}
+    {% include 'components/richtext.html' with 
+        content=self.intro_text
+        modifier='__padded'
+    %}
+{% endif %}
+
+{% if page.content %}
+    <div class="flexibleblocks">
+        {% for block in page.content %}
+            <div class="flexibleblocks-block">
+                {% include_block block %}
+            </div>
+        {% endfor %}
+    </div>
+{% endif %}
+
+<!-- footer -->
+{% include 'core/footer.html' %}
+
+{% endblock content %}

@@ -1,0 +1,47 @@
+.richtext {
+	&.__padded {
+		padding: 30px 0;
+
+		@media screen and (min-width: $lg) {
+			padding: 80px 0;
+		}
+	}
+
+	h1 {
+		@extend .h1;
+	}
+
+	h2 {
+		@extend .h2;
+	}
+
+	h3 {
+		@extend .h3;
+	}
+
+	h4 {
+		@extend .h4;
+	}
+
+	h5 {
+		@extend .h5;
+	}
+
+	h6 {
+		@extend .h6;
+	}
+
+	p {
+		line-height: 1.6;
+		margin-bottom: 1.6rem;
+	}
+
+	a {
+		color: $color-blue;
+
+		&:hover,
+		&:focus {
+			text-decoration: none;
+		}
+	}
+}
