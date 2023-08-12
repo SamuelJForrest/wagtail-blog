@@ -12,6 +12,10 @@ class HomePage(Page):
     template = 'home/home_page.html'
     max_count = 1
 
+    subpage_types = [
+        'blog.BlogListingPage',
+    ]
+
     banner_title = models.CharField(
         max_length=100,
         null=True,
@@ -34,7 +38,7 @@ class HomePage(Page):
         blank=True,
         on_delete=models.SET_NULL,
         related_name="+"
-   )
+    )
 
     banner_link = models.URLField(
         max_length=1024,
@@ -61,7 +65,7 @@ class HomePage(Page):
         null=True,
         blank=True,
     )
-    
+
     content_panels = Page.content_panels + [
         MultiFieldPanel([
             FieldPanel("banner_title"),

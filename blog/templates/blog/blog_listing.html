@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% include 'components/banner.html' with 
+    banner_image=self.banner_image 
+    banner_title=self.custom_title
+    modifier='__small'
+%}
+
+{% endblock %}

@@ -10,8 +10,6 @@
 
 {% block content %}
 
-{% include 'core/header.html' %}
-
 {% include 'components/banner.html' with 
     banner_image=self.banner_image 
     banner_title=self.banner_title 
@@ -37,8 +35,5 @@
         {% endfor %}
     </div>
 {% endif %}
-
-<!-- footer -->
-{% include 'core/footer.html' %}
 
 {% endblock content %}

@@ -1,6 +1,6 @@
 {% load wagtailcore_tags wagtailimages_tags %}
 
-<div class="banner">
+<div class="banner {% if modifier %}{{ modifier }}{% endif %}">
 
     {% image banner_image fill-1920x600 as img %}
 

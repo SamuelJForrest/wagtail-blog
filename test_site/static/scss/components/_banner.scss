@@ -10,6 +10,10 @@
 		min-height: 450px;
 	}
 
+	&.__small {
+		min-height: 300px;
+	}
+
 	&-image {
 		@include absolute();
 

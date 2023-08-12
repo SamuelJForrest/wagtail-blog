@@ -7,4 +7,8 @@ body {
 	box-sizing: border-box;
 	font-family: $font-family;
 	color: $color-black;
+
+	@media screen and (min-width: $lg) {
+		padding-top: 68px; // padding to account for header
+	}
 }
