@@ -1,0 +1,9 @@
+.blog {
+	&-list {
+		padding: 30px 0;
+
+		@media screen and (min-width: $lg) {
+			padding: 80px 0;
+		}
+	}
+}

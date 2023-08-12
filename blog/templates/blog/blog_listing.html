@@ -8,4 +8,16 @@
     modifier='__small'
 %}
 
+<div class="blog-list">
+    <div class="container">
+        <div class="row">
+            {% for post in posts %}
+                <div class="col-lg-4">
+                    {{ post.custom_title }}
+                </div><!-- col -->
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
 {% endblock %}
