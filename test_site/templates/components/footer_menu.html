@@ -1,0 +1,10 @@
+<div class="col-4 col-lg-2">
+    <h3 class="footer-title __sub">{{ menu.title }}</h3>
+    <ul class="footer-menu">
+        {% for item in menu.menu_items.all %}
+            <li class="footer-menu-item">
+                <a href="{{ item.link }}" {% if item.open_in_new_tab %}target="_blank"{% endif %}>{{ item.title }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+</div><!-- col -->

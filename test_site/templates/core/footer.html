@@ -1,38 +1,49 @@
-<footer class="footer">
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <h2 class="footer-title">More Handy Links</h2>
-            </div><!-- col -->
-            <div class="col-lg-3">
-                <h3 class="footer-title __sub">Menu one</h3>
-                <ul class="footer-menu">
-                    {% for i in '123' %}
-                        <li class="footer-menu-item">
-                            <a href="#">Link {{ i }}</a>
-                        </li>
-                    {% endfor %}
-                </ul>
-            </div><!-- col -->
-            <div class="col-lg-3">
-                <h3 class="footer-title __sub">Menu two</h3>
-                <ul class="footer-menu">
-                    {% for i in '123' %}
-                        <li class="footer-menu-item">
-                            <a href="#">Link {{ i }}</a>
-                        </li>
-                    {% endfor %}
-                </ul>            </div><!-- col -->
-            <div class="col-lg-3">
-                <h3 class="footer-title __sub">Menu three</h3>
-                <ul class="footer-menu">
-                    {% for i in '123' %}
-                        <li class="footer-menu-item">
-                            <a href="#">Link {{ i }}</a>
-                        </li>
-                    {% endfor %}
-                </ul>            
-            </div><!-- col -->
+{% load menu_tags %}
+
+{% get_menu 'wagtail_menu' as wagtail_menu %}
+{% get_menu 'django_menu' as django_menu %}
+{% get_menu 'misc_menu' as misc_menu %}
+
+<footer class="footer __wrap">
+    <div class="footer __upper">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h2 class="footer-title">Handy Links</h2>
+                </div><!-- col -->
+
+                {# Wagtail menu #}
+                {% if wagtail_menu %}
+                    {% include 'components/footer_menu.html' 
+                        with menu=wagtail_menu
+                    %}
+                {% endif %}
+
+                {# Django menu #}
+                {% if django_menu %}
+                    {% include 'components/footer_menu.html' 
+                        with menu=django_menu
+                    %}
+                {% endif %}
+
+                {# Misc menu #}
+                {% if misc_menu %}
+                    {% include 'components/footer_menu.html' 
+                        with menu=misc_menu
+                    %}
+                {% endif %}
+            </div>
         </div>
+    </div>
+
+    <div class="footer __lower">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 d-flex flex-column flex-lg-row justify-content-lg-between align-items-lg-center">
+                    <p class="footer-text">&copy; {% now 'Y' %}</p>
+                    <p class="footer-text">Designed and developed by <a href="https://samuel-james-forrest.herokuapp.com/" target="_blank">Samuel James Forrest</a></p>
+                </div><!-- col -->
+            </div><!-- row -->
+        </div><!-- container -->
     </div>
 </footer>
