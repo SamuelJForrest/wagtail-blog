@@ -1,5 +1,6 @@
 # Core
 .venv
+.vscode
 __pycache__
 static/CACHE
 *.sqlite3

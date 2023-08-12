@@ -1,0 +1,15 @@
+{% load menu_tags %}
+
+{% get_menu 'main_menu' as main_menu %}
+
+{% if main_menu %}
+    <div class="menu">
+        <ul class="menu-list">
+            {% for item in main_menu.menu_items.all %}
+                <li class="menu-item">
+                    <a href="{{ item.link }}">{{ item.title }}</a>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endif %}

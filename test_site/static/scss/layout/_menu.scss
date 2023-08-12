@@ -1,0 +1,36 @@
+.menu {
+	display: none;
+
+	@media screen and (min-width: $lg) {
+		display: block;
+	}
+
+	&.__mobile {
+		display: block;
+
+		@media screen and (min-width: $lg) {
+			display: none;
+		}
+	}
+
+	&-list {
+		display: flex;
+		justify-content: flex-end;
+		align-items: center;
+		gap: 2.4rem;
+	}
+
+	&-item {
+		a {
+			font-size: 1.6rem;
+			color: $color-white;
+			text-decoration: none;
+			font-weight: $font-medium;
+
+			&:hover,
+			&:focus {
+				color: $color-blue;
+			}
+		}
+	}
+}
