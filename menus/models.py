@@ -79,6 +79,7 @@ class Menu(ClusterableModel):
     slug = AutoSlugField(
         populate_from='title',
         editable=True,
+        help_text='Do NOT edit this'
     )
 
     panels = [

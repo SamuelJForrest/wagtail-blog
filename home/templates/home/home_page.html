@@ -20,7 +20,7 @@
 %}
 
 {% if self.intro_text %}
-    {% include 'components/richtext.html' with 
+    {% include 'streams/richtext.html' with 
         content=self.intro_text
         modifier='__padded'
     %}

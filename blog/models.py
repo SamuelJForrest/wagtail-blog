@@ -62,7 +62,8 @@ class BlogDetailPage(Page):
 
     content = StreamField(
         [
-            ("icon_grid", blocks.IconGridBlock())
+            ("icon_grid", blocks.IconGridBlock()),
+            ("rich_text", blocks.RichTextBlock()),
         ],
         use_json_field=True,
         null=True,
