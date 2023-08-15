@@ -52,6 +52,12 @@ class BlogDetailPage(Page):
         help_text="Overwrites default title"
     )
 
+    description = models.CharField(
+        max_length=1024,
+        null=True,
+        blank=True,
+    )
+
     banner_image = models.ForeignKey(
         'wagtailimages.Image',
         blank=True,
@@ -72,6 +78,7 @@ class BlogDetailPage(Page):
 
     content_panels = Page.content_panels + [
         FieldPanel("custom_title"),
+        FieldPanel('description'),
         FieldPanel("banner_image"),
         FieldPanel("content"),
     ]

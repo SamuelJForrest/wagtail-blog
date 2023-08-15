@@ -1,0 +1,21 @@
+{% load wagtailimages_tags %}
+
+<a href="{{ link }}" class="card">
+    {% if image %}
+        {% image image fill-100x100 as card_image %}
+        <div class="card-image">
+            <img src="{{ card_image.url }}" alt="{{ alt }}">
+        </div>
+    {% endif %}
+    <div class="card-content">
+        <h3 class="card-title">{{ title }}</h3>
+        {% if date %}
+            <div class="card-date">{{ date|date:'d/m/Y' }}</div>
+        {% endif %}
+
+        {% if text %}
+            <p class="card-text">{{ text }}</p>
+        {% endif %}
+        <span class="card-button">Read more</span>
+    </div>
+</a>
