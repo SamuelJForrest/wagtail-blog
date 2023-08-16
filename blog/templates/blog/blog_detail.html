@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load wagtailcore_tags wagtailimages_tags %}
+
+{% block content %}
+
+{# Banner #}
+{% include 'components/banner.html' with 
+    banner_title=self.custom_title 
+    banner_image=self.banner_image
+%}
+
+{# Content #}
+{% if self.content %}
+    <div class="flexibleblocks">
+        {% for block in self.content %}
+            <div class="flexibleblocks-block">
+                {% include_block block %}
+            </div>
+        {% endfor %}
+    </div>
+{% endif %}
+
+{% endblock %}

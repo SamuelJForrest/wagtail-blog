@@ -1,10 +1,8 @@
 .richtext {
-	&.__padded {
-		padding: 30px 0;
+	padding: 30px 0;
 
-		@media screen and (min-width: $lg) {
-			padding: 80px 0;
-		}
+	@media screen and (min-width: $lg) {
+		padding: 80px 0;
 	}
 
 	h1 {

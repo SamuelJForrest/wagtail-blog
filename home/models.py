@@ -52,14 +52,10 @@ class HomePage(Page):
         blank=True,
     )
 
-    intro_text = RichTextField(
-        null=True,
-        blank=True,
-    )
-
     content = StreamField(
         [
-            ("icon_grid", blocks.IconGridBlock())
+            ("icon_grid", blocks.IconGridBlock()),
+            ("rich_text", blocks.RichTextBlock()),
         ],
         use_json_field=True,
         null=True,
@@ -77,7 +73,6 @@ class HomePage(Page):
                 FieldPanel("banner_link")
             ], heading="External Link")
         ], heading="Banner"),
-        FieldPanel('intro_text'),
         FieldPanel('content')
     ]
 

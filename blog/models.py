@@ -45,6 +45,10 @@ class BlogListingPage(Page):
 class BlogDetailPage(Page):
     '''Individual blog pages'''
 
+    template = 'blog/blog_detail.html'
+
+    subpage_types = []
+
     custom_title = models.CharField(
         max_length=100,
         null=False,
@@ -56,6 +60,7 @@ class BlogDetailPage(Page):
         max_length=1024,
         null=True,
         blank=True,
+        help_text="Blog description used in cards on blog list pages"
     )
 
     banner_image = models.ForeignKey(

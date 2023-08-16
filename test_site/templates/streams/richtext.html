@@ -1,11 +1,13 @@
 {% load wagtailcore_tags %}
 
-<div class="richtext {% if modifier %}{{ modifier }}{% endif %}">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-10 mx-lg-auto">
-                {{ content|richtext }}
+{% if self.content%}
+    <div class="richtext {% if modifier %}{{ modifier }}{% endif %}">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 mx-lg-auto">
+                    {{ self.content|richtext }}
+                </div>
             </div>
         </div>
     </div>
-</div>
+{% endif %}
