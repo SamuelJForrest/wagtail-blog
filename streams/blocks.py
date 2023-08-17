@@ -56,3 +56,40 @@ class RichTextBlock(blocks.StructBlock):
         template = 'streams/richtext.html'
         icon = 'edit'
         label = 'Rich Text Block'
+
+
+class HighLightsBlock(blocks.StructBlock):
+    '''Highlights block'''
+
+    title = blocks.CharBlock(
+        max_length=256,
+        null=True,
+        blank=True
+    )
+
+    items = blocks.ListBlock(
+        blocks.StructBlock(
+            [
+                (
+                    'title',
+                    blocks.CharBlock(
+                        max_length=256,
+                        blank=True
+                    )
+                ),
+                (
+                    'content',
+                    blocks.RichTextBlock()
+                )
+            ],
+            label_format="{title}"
+        ),
+        collapsed=True,
+        max_num=4,
+        help_text="Enter a maximum of four highlights"
+    )
+
+    class Meta: # noqa
+        template = 'streams/highlights.html'
+        icon = 'pick'
+        label = 'Highlights Block'

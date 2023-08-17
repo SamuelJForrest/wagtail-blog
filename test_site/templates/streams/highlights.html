@@ -1,0 +1,33 @@
+{% load wagtailcore_tags %}
+
+{% if self.items %}
+    <div class="highlights">
+        <div class="container">
+            {% if self.title %}
+                <div class="row">
+                    <div class="col-12">
+                        <h2 class="sr-only">{{ self.title }}</h2>
+                    </div><!-- col -->
+                </div><!-- row -->
+            {% endif %}
+
+            <div class="row flex-row-reverse">
+                <div class="col-lg-4">
+                    {% for item in self.items %}
+                        <div class="highlights-titles">
+                            <button class="highlights-title">{{ item.title }} </button>
+                        </div>
+                    {% endfor %}
+                </div><!-- col -->
+
+                <div class="col-lg-8">
+                    {% for item in self.items %}
+                        <div class="highlight-content">
+                            {{ item.content|richtext }}
+                        </div>
+                    {% endfor %}
+                </div>
+            </div><!-- row -->
+        </div><!-- container -->
+    </div>
+{% endif %}

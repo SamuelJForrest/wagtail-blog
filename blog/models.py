@@ -75,6 +75,7 @@ class BlogDetailPage(Page):
         [
             ("icon_grid", blocks.IconGridBlock()),
             ("rich_text", blocks.RichTextBlock()),
+            ("highlights", blocks.HighLightsBlock()),
         ],
         use_json_field=True,
         null=True,

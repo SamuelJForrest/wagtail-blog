@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load wagtailcore_tags wagtailimages_tags %}
+{% load static %}
 
 {% block content %}
 
@@ -13,11 +14,15 @@
 {% if self.content %}
     <div class="flexibleblocks">
         {% for block in self.content %}
-            <div class="flexibleblocks-block">
+            <div class="flexibleblocks-block __{{ block.title }}">
                 {% include_block block %}
             </div>
         {% endfor %}
     </div>
 {% endif %}
 
+{% endblock %}
+
+{% block extra_js %}
+<script type="text/javascript" src="{% static 'js/streams/highlights.js' %}"></script>
 {% endblock %}
